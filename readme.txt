@@ -1,4 +1,4 @@
-=== f(x) Private Site ===
+=== f(x) Photo Tag ===
 Contributors: turtlepod
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TT23LVNKA3AU2
 Tags: photo, photo tag, image, image tag, facebook photo tag, image label, photo label, image hot spot

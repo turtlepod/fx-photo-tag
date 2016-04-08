@@ -1,0 +1,175 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: f(x) Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-08 16:00+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: dave <david.warna@gmail.com>\n"
+"Language-Team: David Chandra P. <david@shellcreeper.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__;esc_attr_e;esc_attr__;esc_html_e;esc_html__;_x;"
+"_n;_x:1,2c;_n:1,2;_ex\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: fx-photo-tag.php:102
+#, php-format
+msgid ""
+"Navigate to <a href=\"%s\">Photo Tag (Under Media)</a> to add label or tag "
+"to your photos."
+msgstr ""
+
+#: includes/admin-edit.php:29
+msgid "Edit Photo Tag"
+msgstr ""
+
+#: includes/admin-edit.php:91 includes/admin-edit.php:96
+#: includes/admin-edit.php:314
+msgid "Upload/Select Image"
+msgstr ""
+
+#: includes/admin-edit.php:92 includes/admin-edit.php:97
+msgid "Remove Image"
+msgstr ""
+
+#: includes/admin-edit.php:118
+msgid "Select color:"
+msgstr ""
+
+#: includes/admin-edit.php:146
+msgid "Tag"
+msgstr ""
+
+#: includes/admin-edit.php:169
+msgid "Text:"
+msgstr ""
+
+#: includes/admin-edit.php:174
+msgid "URL:"
+msgstr ""
+
+#: includes/admin-edit.php:178
+msgid "Open in new tab?"
+msgstr ""
+
+#: includes/admin-edit.php:184
+msgid "Add Tag"
+msgstr ""
+
+#: includes/admin-edit.php:185
+msgid "Edit Tag"
+msgstr ""
+
+#: includes/admin-edit.php:186
+msgid "Delete Tag"
+msgstr ""
+
+#: includes/admin-edit.php:212
+msgid "Notice"
+msgstr ""
+
+#: includes/admin-edit.php:217
+msgid ""
+"Please save entry as draft or publish entry before upload/select image."
+msgstr ""
+
+#: includes/admin-edit.php:315
+msgid "Insert Image"
+msgstr ""
+
+#: includes/admin-edit.php:317
+msgid "Label"
+msgstr ""
+
+#: includes/admin-mod.php:87 includes/admin-mod.php:130
+msgid "Shortcode"
+msgstr ""
+
+#: includes/admin-mod.php:106
+msgid "You can change the ID using \"Slug\" Meta Box."
+msgstr ""
+
+#: includes/admin-mod.php:109
+msgid "Shortcode not available yet. Please save photo or publish."
+msgstr ""
+
+#: includes/ajax-callback.php:35 includes/ajax-callback.php:123
+#: includes/ajax-callback.php:195
+msgid "Error. Please try again."
+msgstr ""
+
+#: includes/ajax-callback.php:86
+msgid "Photo tag added."
+msgstr ""
+
+#: includes/ajax-callback.php:158
+msgid "Photo tag updated."
+msgstr ""
+
+#: includes/ajax-callback.php:226
+msgid "Tag deleted."
+msgstr ""
+
+#: includes/register-post-type.php:33 includes/register-post-type.php:34
+#: includes/register-post-type.php:44
+msgctxt "cpt"
+msgid "Photo Tag"
+msgstr ""
+
+#: includes/register-post-type.php:35
+msgctxt "cpt"
+msgid "Add New"
+msgstr ""
+
+#: includes/register-post-type.php:36
+msgctxt "cpt"
+msgid "Add New Item"
+msgstr ""
+
+#: includes/register-post-type.php:37
+msgctxt "cpt"
+msgid "Edit Item"
+msgstr ""
+
+#: includes/register-post-type.php:38
+msgctxt "cpt"
+msgid "New Item"
+msgstr ""
+
+#: includes/register-post-type.php:39
+msgctxt "cpt"
+msgid "All Items"
+msgstr ""
+
+#: includes/register-post-type.php:40
+msgctxt "cpt"
+msgid "View Item"
+msgstr ""
+
+#: includes/register-post-type.php:41
+msgctxt "cpt"
+msgid "Search Items"
+msgstr ""
+
+#: includes/register-post-type.php:42
+msgctxt "cpt"
+msgid "Not Found"
+msgstr ""
+
+#: includes/register-post-type.php:43
+msgctxt "cpt"
+msgid "Not Found in Trash"
+msgstr ""
+
+#: includes/utility.php:170
+msgid "Default"
+msgstr ""
+
+#: includes/utility.php:171
+msgid "White"
+msgstr ""
