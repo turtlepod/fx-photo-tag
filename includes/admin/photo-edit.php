@@ -1,10 +1,12 @@
 <?php
 /**
- * Admin Edit
+ * Photo Edit Form
  * - Add Fake Meta Box to Upload/Select Image
  * - Create Pop Up to Edit/Add/Delete Tag
+ * - Save Meta Data (Image ID and Color Scheme)
  * @since 1.0.0
 **/
+
 
 /* Add plugin repo post meta field. */
 add_action( 'edit_form_after_title', 'fx_photo_tag_meta_field', 10, 2 );
@@ -223,6 +225,7 @@ function fx_photo_tag_popup_notice_html(){
 	<div class="fx-box-overlay" style="display:none"></div><!-- .fx-box-overlay -->
 	<?php
 }
+
 
 /* ==== SAVE DATA ==== */
 

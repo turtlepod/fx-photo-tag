@@ -1,7 +1,7 @@
 <?php
 /**
  * Admin Mod
- *
+ * - Enqueue Admin Scripts
  * - Admin Menu (Add Under "Media")
  * - Add Shortcode Meta Box
  * - Custom Column
@@ -23,7 +23,7 @@ function fx_photo_tag_admin_mod_scripts( $hook ){
 	/* Check post type before loading scripts. */
 	if( 'fx_photo_tag' == $post_type ){
 
-		/* Custom Column CSS */
+		/* Edit Columns */
 		if( "edit.php" == $hook ){
 
 			wp_enqueue_script( 'fx-photo-tag-admin-column', FX_PHOTO_TAG_URI. 'assets/admin/columns.js', array( 'jquery' ), FX_PHOTO_TAG_VERSION, true );
@@ -31,8 +31,6 @@ function fx_photo_tag_admin_mod_scripts( $hook ){
 		}
 	}
 }
-
-
 
 
 /* ===== ADMIN MENU ===== */
@@ -106,7 +104,7 @@ function fx_photo_tag_shortcode_meta_box_callback( $post_id ){
 		echo wpautop( __( 'You can change the ID using "Slug" Meta Box.', 'fx-photo-tag' ) );
 	}
 	else{
-		echo wpautop( __( 'Shortcode not available yet. Please save photo or publish.', 'fx-photo-tag' ) );
+		echo wpautop( __( 'Shortcode not available yet. Please publish photo.', 'fx-photo-tag' ) );
 	}
 }
 

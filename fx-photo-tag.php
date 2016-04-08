@@ -2,7 +2,7 @@
 /**
  * Plugin Name: f(x) Photo Tag
  * Plugin URI: http://genbumedia.com/plugins/fx-photo-tag/
- * Description: Set your site to member only. All visitor will need to login to view site.
+ * Description: Add label and tag your uploaded photo/image just like facebook!
  * Version: 1.0.0
  * Author: David Chandra Purnama
  * Author URI: http://shellcreeper.com/
@@ -21,7 +21,7 @@ if ( ! defined( 'WPINC' ) ) { die; }
 define( 'FX_PHOTO_TAG_VERSION', '1.0.0' );
 
 /* Set the debug constant. */
-define( 'FX_PHOTO_TAG_DEBUG', false );
+define( 'FX_PHOTO_TAG_DEBUG', apply_filters( 'fx_photo_tag_debug', false ) );
 
 /* Set the constant path to the plugin path. */
 define( 'FX_PHOTO_TAG_PATH', trailingslashit( plugin_dir_path( __FILE__ ) ) );
@@ -33,11 +33,11 @@ define( 'FX_PHOTO_TAG_URI', trailingslashit( plugin_dir_url( __FILE__ ) ) );
 /* Plugins Loaded
 ------------------------------------------ */
 
-/* Load plugins file */
+/* Load plugin */
 add_action( 'plugins_loaded', 'fx_photo_tag_plugins_loaded' );
 
 /**
- * Load plugins file
+ * Load plugins functions
  * @since 1.0.0
  */
 function fx_photo_tag_plugins_loaded(){
@@ -58,13 +58,13 @@ function fx_photo_tag_plugins_loaded(){
 	if( is_admin() ){
 
 		/* Admin Edit */
-		require_once( FX_PHOTO_TAG_PATH . 'includes/admin-edit.php' );
+		require_once( FX_PHOTO_TAG_PATH . 'includes/admin/photo-edit.php' );
 
-		/* Admin Edit */
-		require_once( FX_PHOTO_TAG_PATH . 'includes/admin-mod.php' );
+		/* Ajax Callback */
+		require_once( FX_PHOTO_TAG_PATH . 'includes/admin/ajax-callback.php' );
 
-		/* Ajax */
-		require_once( FX_PHOTO_TAG_PATH . 'includes/ajax-callback.php' );
+		/* Various Admin Mod */
+		require_once( FX_PHOTO_TAG_PATH . 'includes/admin/admin-mod.php' );
 	}
 
 }
@@ -79,7 +79,7 @@ register_activation_hook( __FILE__, 'fx_photo_tag_activation' );
 
 /**
  * Runs only when the plugin is activated.
- * @since 0.1.0
+ * @since 1.0.0
  */
 function fx_photo_tag_activation() {
 
@@ -92,7 +92,7 @@ add_action( 'admin_notices', 'fx_photo_tag_admin_notice' );
 
 /**
  * Admin Notice on Activation.
- * @since 0.1.0
+ * @since 1.0.0
  */
 function fx_photo_tag_admin_notice(){
 	$transient = get_transient( 'fx_photo_tag_activation_notice' );

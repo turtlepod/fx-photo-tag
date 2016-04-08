@@ -22,6 +22,8 @@ After installation of this plugin, you can tag your photo in "Media > Photo Tag"
 1. Add label/tag image/photo like facebook.
 1. Easy to embed photo using shortcode.
 1. Two color scheme for the tag/label. Black(default) and White.
+1. Lightweight no bloated features.
+1. Very cool :)
 1. The GPL v2.0 or later license. :) Use it to make something cool.
 1. Support available at [Genbu Media](https://genbumedia.com/contact/).
 
@@ -53,11 +55,13 @@ Simply use the shortcode provided in any post content.
 
 == Screenshots ==
 
-1. Admin Page.
-2. Edit Page.
-3. Add Tag Pop Up.
-4. Add Shortcode in content.
-5. Final result in post content.
+1. Manage your tagged photos.
+2. Click image to add tag.
+3. Click the tag to edit or delete.
+4. Default (black) color scheme.
+5. White color scheme (for dark photo).
+6. Add your photo using shortcode in your post.
+7. Final result.
 
 == Changelog ==
 
