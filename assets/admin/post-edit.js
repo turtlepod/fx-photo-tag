@@ -24,7 +24,6 @@ jQuery(document).ready(function($){
 
 		file_frame.on( 'select', function(){
 			var this_attachment = file_frame.state().get('selection').first().toJSON();
-			console.log( this_attachment );
 			var img_url = this_attachment.url;
 			var img_width = this_attachment.width;
 			var img_height = this_attachment.height;
@@ -88,7 +87,13 @@ jQuery(document).ready(function($){
 			});
 		});
 	}
+	/* On page load */
 	fx_photo_tag_reposition();
+	/* On column change (screen option) */
+	$( 'input[name="screen_columns"]' ).change( function(){
+		fx_photo_tag_reposition();
+	});
+	/* On window resize */
 	$( window ).resize( function(){
 		fx_photo_tag_reposition();
 	});
@@ -165,7 +170,6 @@ jQuery(document).ready(function($){
 			},
 			dataType: 'json',
 			success: function( data ){
-				console.log( data );
 				/* Remove Spinner */
 				$( '#fx-save-tag-spinner' ).removeClass( 'is-active' );
 
@@ -256,7 +260,6 @@ jQuery(document).ready(function($){
 			},
 			dataType: 'json',
 			success: function( data ){
-				console.log( data );
 				/* Remove Spinner */
 				$( '#fx-save-tag-spinner' ).removeClass( 'is-active' );
 
@@ -309,7 +312,6 @@ jQuery(document).ready(function($){
 			},
 			dataType: 'json',
 			success: function( data ){
-				console.log( data );
 				/* Remove Spinner */
 				$( '#fx-save-tag-spinner' ).removeClass( 'is-active' );
 

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: f(x) Photo Tag
  * Plugin URI: http://genbumedia.com/plugins/fx-photo-tag/
- * Description: Add label and tag your uploaded photo/image just like facebook!
+ * Description: Add label and tag to your photo/image just like facebook!
  * Version: 1.0.0
  * Author: David Chandra Purnama
  * Author URI: http://shellcreeper.com/

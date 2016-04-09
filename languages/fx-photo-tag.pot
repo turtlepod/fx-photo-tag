@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: f(x) Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-08 16:00+0700\n"
+"POT-Creation-Date: 2016-04-09 14:39+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: dave <david.warna@gmail.com>\n"
 "Language-Team: David Chandra P. <david@shellcreeper.com>\n"
@@ -24,95 +24,99 @@ msgid ""
 "to your photos."
 msgstr ""
 
-#: includes/admin-edit.php:29
+#: includes/admin/admin-mod.php:85 includes/admin/admin-mod.php:128
+msgid "Shortcode"
+msgstr ""
+
+#: includes/admin/admin-mod.php:104
+msgid "You can change the ID using \"Slug\" Meta Box."
+msgstr ""
+
+#: includes/admin/admin-mod.php:107
+msgid "Shortcode not available yet. Please publish photo."
+msgstr ""
+
+#: includes/admin/admin-mod.php:129
+msgid "Thumbnail"
+msgstr ""
+
+#: includes/admin/ajax-callback.php:35 includes/admin/ajax-callback.php:123
+#: includes/admin/ajax-callback.php:195
+msgid "Error. Please try again."
+msgstr ""
+
+#: includes/admin/ajax-callback.php:86
+msgid "Photo tag added."
+msgstr ""
+
+#: includes/admin/ajax-callback.php:158
+msgid "Photo tag updated."
+msgstr ""
+
+#: includes/admin/ajax-callback.php:226
+msgid "Tag deleted."
+msgstr ""
+
+#: includes/admin/photo-edit.php:31
 msgid "Edit Photo Tag"
 msgstr ""
 
-#: includes/admin-edit.php:91 includes/admin-edit.php:96
-#: includes/admin-edit.php:314
+#: includes/admin/photo-edit.php:93 includes/admin/photo-edit.php:98
+#: includes/admin/photo-edit.php:317
 msgid "Upload/Select Image"
 msgstr ""
 
-#: includes/admin-edit.php:92 includes/admin-edit.php:97
+#: includes/admin/photo-edit.php:94 includes/admin/photo-edit.php:99
 msgid "Remove Image"
 msgstr ""
 
-#: includes/admin-edit.php:118
+#: includes/admin/photo-edit.php:120
 msgid "Select color:"
 msgstr ""
 
-#: includes/admin-edit.php:146
+#: includes/admin/photo-edit.php:148
 msgid "Tag"
 msgstr ""
 
-#: includes/admin-edit.php:169
+#: includes/admin/photo-edit.php:171
 msgid "Text:"
 msgstr ""
 
-#: includes/admin-edit.php:174
+#: includes/admin/photo-edit.php:176
 msgid "URL:"
 msgstr ""
 
-#: includes/admin-edit.php:178
+#: includes/admin/photo-edit.php:180
 msgid "Open in new tab?"
 msgstr ""
 
-#: includes/admin-edit.php:184
+#: includes/admin/photo-edit.php:186
 msgid "Add Tag"
 msgstr ""
 
-#: includes/admin-edit.php:185
+#: includes/admin/photo-edit.php:187
 msgid "Edit Tag"
 msgstr ""
 
-#: includes/admin-edit.php:186
+#: includes/admin/photo-edit.php:188
 msgid "Delete Tag"
 msgstr ""
 
-#: includes/admin-edit.php:212
+#: includes/admin/photo-edit.php:214
 msgid "Notice"
 msgstr ""
 
-#: includes/admin-edit.php:217
+#: includes/admin/photo-edit.php:219
 msgid ""
 "Please save entry as draft or publish entry before upload/select image."
 msgstr ""
 
-#: includes/admin-edit.php:315
+#: includes/admin/photo-edit.php:318
 msgid "Insert Image"
 msgstr ""
 
-#: includes/admin-edit.php:317
+#: includes/admin/photo-edit.php:320
 msgid "Label"
-msgstr ""
-
-#: includes/admin-mod.php:87 includes/admin-mod.php:130
-msgid "Shortcode"
-msgstr ""
-
-#: includes/admin-mod.php:106
-msgid "You can change the ID using \"Slug\" Meta Box."
-msgstr ""
-
-#: includes/admin-mod.php:109
-msgid "Shortcode not available yet. Please save photo or publish."
-msgstr ""
-
-#: includes/ajax-callback.php:35 includes/ajax-callback.php:123
-#: includes/ajax-callback.php:195
-msgid "Error. Please try again."
-msgstr ""
-
-#: includes/ajax-callback.php:86
-msgid "Photo tag added."
-msgstr ""
-
-#: includes/ajax-callback.php:158
-msgid "Photo tag updated."
-msgstr ""
-
-#: includes/ajax-callback.php:226
-msgid "Tag deleted."
 msgstr ""
 
 #: includes/register-post-type.php:33 includes/register-post-type.php:34

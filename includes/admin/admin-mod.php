@@ -126,9 +126,10 @@ function fx_photo_tag_post_columns( $columns ){
 
 	/* Add shortcode */
 	$columns['shortcode'] = __( 'Shortcode', 'fx-photo-tag' );
+	$columns['thumbnail'] = __( 'Thumbnail', 'fx-photo-tag' );
 
 	/* Add thumbnail */
-	$columns = array_slice( $columns, 0, 1, true ) + array( 'thumbnail' => '' ) + array_slice( $columns, 1, NULL, true );
+	//$columns = array_slice( $columns, 0, 1, true ) + array( 'thumbnail' => '' ) + array_slice( $columns, 1, NULL, true );
 
 	/* return it. */
 	return $columns;

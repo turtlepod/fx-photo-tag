@@ -8,21 +8,23 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Add label and tag your uploaded photo/image just like facebook!
+Add label and tag to your photo/image just like facebook!
 
 == Description ==
 
-**[f(x) Photo Tag](http://genbumedia.com/plugins/fx-photo-tag/)**: Add label and tag your uploaded photo/image just like facebook!
+**[f(x) Photo Tag](http://genbumedia.com/plugins/fx-photo-tag/)**: Add label and tag to your photo/image just like facebook!
 
-After installation of this plugin, you can tag your photo in "Media > Photo Tag". And create a photo tag entry.
+After installation of this plugin, you can tag your photo in "Media > Photo Tag". And create a photo tag item.
 
 **Features:**
 
 1. Super simple and easy to use.
 1. Add label/tag image/photo like facebook.
-1. Easy to embed photo using shortcode.
+1. Easy to embed photo in post/page using shortcode.
 1. Two color scheme for the tag/label. Black(default) and White.
 1. Lightweight no bloated features.
+1. Responsive and mobile ready.
+1. Works in any theme.
 1. Very cool :)
 1. The GPL v2.0 or later license. :) Use it to make something cool.
 1. Support available at [Genbu Media](https://genbumedia.com/contact/).
