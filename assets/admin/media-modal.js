@@ -20,7 +20,6 @@
 			if( ! $( '.fx-photo-tag-browser-items' ).length ){
 				var fx_photo_tag_content = $(
 					'<div id="fx-photo-tag-browser">' +
-						'<a id="fx-photo-tag-browser-load" href="#" class="button">' + fx_photo_tag_modal.click_me + '</a>' +
 						'<span class="spinner"></span>' +
 					'</div>' +
 					'<div id="fx-photo-tag-toolbar"><a id="fx-photo-tag-insert" href="#" class="button media-button button-primary button-large disabled">' + fx_photo_tag_modal.insert + '</a></div>'
@@ -38,6 +37,28 @@
 			}
 			/* Add in this tab content. */
 			this.$el.append( fx_photo_tag_content );
+
+			/* Load Photo Tags WP Query via Ajax */
+			$( '#fx-photo-tag-browser .spinner' ).addClass( 'is-active' );
+			if( ! $( ".fx-photo-tag-browser-items" ).length ){
+				$.ajax({
+					type: "POST",
+					url: fx_photo_tag_modal.ajax_url, /* from localized script */
+					data:{
+						action     : 'fx_photo_tag_modal_init', /* "wp_ajax_*" */
+						nonce      : fx_photo_tag_modal.ajax_nonce,
+					},
+					success: function( data ){
+						$( '#fx-photo-tag-browser .spinner' ).remove();
+						$( data ).appendTo( "#fx-photo-tag-browser" );
+						$( data ).appendTo( 'body' );
+					}
+				});
+			}
+			else{
+				$( "#fx-photo-tag-browser-load" ).remove();
+				$( '.fx-photo-tag-browser-items' ).clone().appendTo( '#fx-photo-tag-browser' );
+			}
 		},
 	});
 
@@ -71,43 +92,25 @@
 
 	});
 
-	/* Load Photo List */
-	$( document.body ).on( 'click', '#fx-photo-tag-browser-load', function(e){
-		$( '#fx-photo-tag-browser .spinner' ).addClass( 'is-active' );
-		$( "#fx-photo-tag-browser-load" ).hide();
-		if( ! $( ".fx-photo-tag-browser-items" ).length ){
-			$.ajax({
-				type: "POST",
-				url: fx_photo_tag_modal.ajax_url, /* from localized script */
-				data:{
-					action     : 'fx_photo_tag_modal_init', /* "wp_ajax_*" */
-					nonce      : fx_photo_tag_modal.ajax_nonce,
-				},
-				success: function( data ){
-					$( '#fx-photo-tag-browser .spinner' ).remove();
-					$( "#fx-photo-tag-browser-load" ).remove();
-					$( data ).appendTo( "#fx-photo-tag-browser" );
-					$( data ).appendTo( 'body' );
-				}
-			});
-		}
-		else{
-			$( "#fx-photo-tag-browser-load" ).remove();
-			$( '.fx-photo-tag-browser-items' ).clone().appendTo( '#fx-photo-tag-browser' );
-		}
-	});
-	/* Select Photo */
+	/* === Select Photo === */
 	$( document.body ).on( 'click', '.fx-photo-tag-item', function(e){
 		e.preventDefault();
-		var photo_id = $( this ).attr( 'data-id' );
-		$( this ).addClass( 'selected' );
-		$( this ).siblings( '.fx-photo-tag-item' ).removeClass( 'selected' );
-		$( "#fx-photo-tag-insert" ).removeClass( 'disabled' ).attr( 'data-id', photo_id );
+		if( $( this ).hasClass( 'selected' ) ){
+			$( this ).removeClass( 'selected' );
+			$( "#fx-photo-tag-insert" ).addClass( 'disabled' ).attr( 'data-id', '' );
+		}
+		else{
+			var photo_id = $( this ).attr( 'data-id' );
+			$( this ).addClass( 'selected' );
+			$( this ).siblings( '.fx-photo-tag-item' ).removeClass( 'selected' );
+			$( "#fx-photo-tag-insert" ).removeClass( 'disabled' ).attr( 'data-id', photo_id );
+		}
 	});
-	/* Insert Shortcode */
+	/* === Insert Shortcode === */
 	$( document.body ).on( 'click', '#fx-photo-tag-insert', function(e){
 		e.preventDefault();
-		if( $( this ).hasClass( 'disabled' ) && $( this ).attr( 'data-id' ) ){
+		if( $( this ).hasClass( 'disabled' ) ){
+			$( this ).attr( 'data-id', '' );
 			return false;
 		}
 		else{
