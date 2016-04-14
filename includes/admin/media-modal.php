@@ -23,7 +23,7 @@ function fx_photo_tag_media_modal_scripts( $hook ){
 		wp_localize_script( 'fx-photo-tag-media-modal', 'fx_photo_tag_modal',
 			array(
 				'click_me'       => __( 'Click here to load photos', 'fx-photo-tag' ),
-				'insert'         => __( 'Insert photo', 'fx-photo-tag' ),
+				'insert'         => __( 'Insert shortcode', 'fx-photo-tag' ),
 				'title'          => __( 'Photo Tag', 'fx-photo-tag' ),
 				'ajax_url'       => admin_url( 'admin-ajax.php' ),
 				'ajax_nonce'     => wp_create_nonce( 'fx_photo_tag_modal_nonce' ),
@@ -50,7 +50,7 @@ function fx_photo_tag_media_modal_ajax_items(){
 		die(-1);
 	}
 	?>
-	<div class="fx-photo-tag-browser-items">
+	<div class="fx-photo-tag-items fx-mm-items">
 	<?php
 		$args = array(
 			'post_type'      => 'fx_photo_tag',
@@ -69,10 +69,14 @@ function fx_photo_tag_media_modal_ajax_items(){
 				$image_data = wp_get_attachment_image_src( $image_id, 'thumbnail' );
 				if( $image_data ){
 					?>
-					<div class="fx-photo-tag-item" data-id="<?php echo esc_attr( $slug ); ?>">
-						<img src="<?php echo $image_data[0]; ?>">
-						<div class="fx-photo-tag-slug"><?php echo $slug; ?></div>
-					</div>
+					<div class="fx-photo-tag-item fx-mm-item" data-id="<?php echo esc_attr( $slug ); ?>">
+						<div class="fx-mm-item-wrap">
+							<img src="<?php echo esc_url( $image_data[0] ); ?>" class="fx-mm-item-img">
+							<div class="fx-mm-item-caption">
+								<?php echo $slug; ?>
+							</div>
+						</div><!-- .fx-mm-item-wrap -->
+					</div><!-- .fx-mm-item -->
 					<?php
 				}
 			}
@@ -84,12 +88,7 @@ function fx_photo_tag_media_modal_ajax_items(){
 		}
 		wp_reset_postdata();
 	?>
-	</div><!-- #fx-photo-tag-browser-items -->
+	</div><!-- .fx-mm-items -->
 	<?php
 	die();
 }
-
-
-
-
-

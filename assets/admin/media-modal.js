@@ -14,33 +14,43 @@
 
 	/* === Custom Content : this view contains the main panel UI === */
 	wp.media.view.fxPhotoTag = wp.media.View.extend({
-		className: 'fx-photo-tag-browser',
+		className: 'fx-photo-tag-browser fx-mm-browser',
 		initialize: function(){
-			/* if it's not loaded yet. add "click to load" button */
-			if( ! $( '.fx-photo-tag-browser-items' ).length ){
-				var fx_photo_tag_content = $(
-					'<div id="fx-photo-tag-browser">' +
-						'<span class="spinner"></span>' +
-					'</div>' +
-					'<div id="fx-photo-tag-toolbar"><a id="fx-photo-tag-insert" href="#" class="button media-button button-primary button-large disabled">' + fx_photo_tag_modal.insert + '</a></div>'
-				);
-			}
-			/* Already loaded, simply clone and use it. */
-			else{
-				var items = $( '.fx-photo-tag-browser-items' ).html();
-				var fx_photo_tag_content = $(
-					'<div id="fx-photo-tag-browser">' +
-						'<div class="fx-photo-tag-browser-items">' + items + '</div>' +
-					'</div>' +
-					'<div id="fx-photo-tag-toolbar"><a id="fx-photo-tag-insert" href="#" class="button media-button button-primary button-large disabled">' + fx_photo_tag_modal.insert + '</a></div>'
-				);
-			}
-			/* Add in this tab content. */
-			this.$el.append( fx_photo_tag_content );
 
-			/* Load Photo Tags WP Query via Ajax */
-			$( '#fx-photo-tag-browser .spinner' ).addClass( 'is-active' );
-			if( ! $( ".fx-photo-tag-browser-items" ).length ){
+			/* Initial content template */
+			if( ! $( ".fx-photo-tag-items" ).length ){
+				var fx_photo_tag_template = $(
+					'<div id="fx-photo-tag-content" class="fx-mm-content">' +
+						'<span class="spinner is-active"></span>' +
+					'</div>' +
+					'<div id="fx-photo-tag-toolbar" class="fx-mm-toolbar">' +
+						'<a id="fx-photo-tag-insert" href="#" class="button fx-mm-insert media-button button-primary button-large disabled">' +
+							fx_photo_tag_modal.insert +
+						'</a>' +
+					'</div>'
+				);
+			}
+			else{
+				var items = $( '.fx-photo-tag-items' ).html();
+				var fx_photo_tag_template = $(
+					'<div id="fx-photo-tag-content" class="fx-mm-content">' +
+						'<div class="fx-photo-tag-items fx-mm-items">' + items + '</div>' +
+					'</div>' +
+					'<div id="fx-photo-tag-toolbar" class="fx-mm-toolbar">' +
+						'<a id="fx-photo-tag-insert" href="#" class="button fx-mm-insert media-button button-primary button-large disabled">' +
+							fx_photo_tag_modal.insert +
+						'</a>' +
+					'</div>'
+				);
+			}
+
+			/* Add template in tab content. */
+			this.$el.append( fx_photo_tag_template );
+
+			/* === Load Photo Tags WP Query via Ajax === */
+
+			/* If it's not exist yet */
+			if( ! $( ".fx-photo-tag-items" ).length ){
 				$.ajax({
 					type: "POST",
 					url: fx_photo_tag_modal.ajax_url, /* from localized script */
@@ -49,15 +59,11 @@
 						nonce      : fx_photo_tag_modal.ajax_nonce,
 					},
 					success: function( data ){
-						$( '#fx-photo-tag-browser .spinner' ).remove();
-						$( data ).appendTo( "#fx-photo-tag-browser" );
-						$( data ).appendTo( 'body' );
+						$( '#fx-photo-tag-content .spinner' ).remove();
+						$( data ).appendTo( "#fx-photo-tag-content" );
+						$( data ).appendTo( 'body' ); // also save outside
 					}
 				});
-			}
-			else{
-				$( "#fx-photo-tag-browser-load" ).remove();
-				$( '.fx-photo-tag-browser-items' ).clone().appendTo( '#fx-photo-tag-browser' );
 			}
 		},
 	});
