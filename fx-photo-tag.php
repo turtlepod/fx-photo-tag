@@ -3,7 +3,7 @@
  * Plugin Name: f(x) Photo Tag
  * Plugin URI: http://genbumedia.com/plugins/fx-photo-tag/
  * Description: Add label and tag to your photo/image just like facebook!
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: David Chandra Purnama
  * Author URI: http://shellcreeper.com/
  * License: GPLv2 or later
@@ -65,6 +65,9 @@ function fx_photo_tag_plugins_loaded(){
 
 		/* Various Admin Mod */
 		require_once( FX_PHOTO_TAG_PATH . 'includes/admin/admin-mod.php' );
+
+		/* Media Modal */
+		require_once( FX_PHOTO_TAG_PATH . 'includes/admin/media-modal.php' );
 	}
 
 }

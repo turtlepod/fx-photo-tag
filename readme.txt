@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: photo, photo tag, image, image tag, facebook photo tag, image label, photo label, image hot spot
 Requires at least: 4.4
 Tested up to: 4.5
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,10 @@ Simply use the shortcode provided in any post content.
 7. Final result.
 
 == Changelog ==
+
+= 1.1.0 - 14 April 2016 =
+* Add Media Modal Tab to insert photo tag shortcode easier.
+* Update f(x) Box
 
 = 1.0.0 - 08 April 2016 =
 * Init
