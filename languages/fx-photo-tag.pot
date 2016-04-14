@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: f(x) Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-09 14:39+0700\n"
+"POT-Creation-Date: 2016-04-15 02:19+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: dave <david.warna@gmail.com>\n"
 "Language-Team: David Chandra P. <david@shellcreeper.com>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Generator: Poedit 1.8.7\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: fx-photo-tag.php:102
+#: fx-photo-tag.php:105
 #, php-format
 msgid ""
 "Navigate to <a href=\"%s\">Photo Tag (Under Media)</a> to add label or tag "
@@ -40,8 +40,7 @@ msgstr ""
 msgid "Thumbnail"
 msgstr ""
 
-#: includes/admin/ajax-callback.php:35 includes/admin/ajax-callback.php:123
-#: includes/admin/ajax-callback.php:195
+#: includes/admin/ajax-callback.php:35 includes/admin/ajax-callback.php:193
 msgid "Error. Please try again."
 msgstr ""
 
@@ -49,73 +48,81 @@ msgstr ""
 msgid "Photo tag added."
 msgstr ""
 
-#: includes/admin/ajax-callback.php:158
+#: includes/admin/ajax-callback.php:123
 msgid "Photo tag updated."
 msgstr ""
 
-#: includes/admin/ajax-callback.php:226
+#: includes/admin/ajax-callback.php:224
 msgid "Tag deleted."
+msgstr ""
+
+#: includes/admin/media-modal.php:25
+msgid "Insert shortcode"
+msgstr ""
+
+#: includes/admin/media-modal.php:26 includes/admin/photo-edit.php:318
+msgid "Photo Tag"
+msgstr ""
+
+#: includes/admin/media-modal.php:83
+msgid "No Photo Tag Found."
 msgstr ""
 
 #: includes/admin/photo-edit.php:31
 msgid "Edit Photo Tag"
 msgstr ""
 
-#: includes/admin/photo-edit.php:93 includes/admin/photo-edit.php:98
-#: includes/admin/photo-edit.php:317
+#: includes/admin/photo-edit.php:96 includes/admin/photo-edit.php:101
+#: includes/admin/photo-edit.php:108 includes/admin/photo-edit.php:315
 msgid "Upload/Select Image"
 msgstr ""
 
-#: includes/admin/photo-edit.php:94 includes/admin/photo-edit.php:99
+#: includes/admin/photo-edit.php:97 includes/admin/photo-edit.php:102
 msgid "Remove Image"
 msgstr ""
 
-#: includes/admin/photo-edit.php:120
+#: includes/admin/photo-edit.php:108
+msgid "Notice"
+msgstr ""
+
+#: includes/admin/photo-edit.php:131
 msgid "Select color:"
 msgstr ""
 
-#: includes/admin/photo-edit.php:148
-msgid "Tag"
-msgstr ""
-
-#: includes/admin/photo-edit.php:171
+#: includes/admin/photo-edit.php:177
 msgid "Text:"
 msgstr ""
 
-#: includes/admin/photo-edit.php:176
+#: includes/admin/photo-edit.php:182
 msgid "URL:"
 msgstr ""
 
-#: includes/admin/photo-edit.php:180
+#: includes/admin/photo-edit.php:186
 msgid "Open in new tab?"
 msgstr ""
 
-#: includes/admin/photo-edit.php:186
+#: includes/admin/photo-edit.php:192
 msgid "Add Tag"
 msgstr ""
 
-#: includes/admin/photo-edit.php:187
+#: includes/admin/photo-edit.php:193
 msgid "Edit Tag"
 msgstr ""
 
-#: includes/admin/photo-edit.php:188
+#: includes/admin/photo-edit.php:194
 msgid "Delete Tag"
 msgstr ""
 
 #: includes/admin/photo-edit.php:214
-msgid "Notice"
-msgstr ""
-
-#: includes/admin/photo-edit.php:219
 msgid ""
 "Please save entry as draft or publish entry before upload/select image."
 msgstr ""
 
-#: includes/admin/photo-edit.php:318
+#: includes/admin/photo-edit.php:316
 msgid "Insert Image"
 msgstr ""
 
-#: includes/admin/photo-edit.php:320
+#: includes/admin/photo-edit.php:319
 msgid "Label"
 msgstr ""
 

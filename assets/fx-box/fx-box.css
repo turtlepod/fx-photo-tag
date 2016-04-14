@@ -1,3 +1,10 @@
+/*
+ * jQuery fxBox v.1.0.0
+ * Thickbox Alternative.
+ * Author: David Chandra
+ * Copyright 2016 Genbu Media
+ * @link http://html.shellcreeper.com/layout-collection/fx-box/
+ */
 #fx-box-overlay{
 	position: fixed;
 	top: 0;

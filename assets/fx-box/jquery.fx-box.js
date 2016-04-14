@@ -3,6 +3,7 @@
  * Thickbox Alternative.
  * Author: David Chandra
  * Copyright 2016 Genbu Media
+ * @link http://html.shellcreeper.com/layout-collection/fx-box/
  */
 ;
 (function($){

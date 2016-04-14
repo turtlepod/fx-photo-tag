@@ -22,7 +22,6 @@ function fx_photo_tag_media_modal_scripts( $hook ){
 
 		wp_localize_script( 'fx-photo-tag-media-modal', 'fx_photo_tag_modal',
 			array(
-				'click_me'       => __( 'Click here to load photos', 'fx-photo-tag' ),
 				'insert'         => __( 'Insert shortcode', 'fx-photo-tag' ),
 				'title'          => __( 'Photo Tag', 'fx-photo-tag' ),
 				'ajax_url'       => admin_url( 'admin-ajax.php' ),
@@ -66,15 +65,13 @@ function fx_photo_tag_media_modal_ajax_items(){
 				$get_post = get_post( $post_id );
 				$slug = $get_post->post_name;
 				$image_id = get_post_meta( $post_id, 'image_id', true );
-				$image_data = wp_get_attachment_image_src( $image_id, 'thumbnail' );
+				$image_data = wp_get_attachment_image_src( $image_id, 'medium' );
 				if( $image_data ){
 					?>
 					<div class="fx-photo-tag-item fx-mm-item" data-id="<?php echo esc_attr( $slug ); ?>">
 						<div class="fx-mm-item-wrap">
-							<img src="<?php echo esc_url( $image_data[0] ); ?>" class="fx-mm-item-img">
-							<div class="fx-mm-item-caption">
-								<?php echo $slug; ?>
-							</div>
+							<div class="fx-mm-item-image" style="background-image:url('<?php echo esc_url( $image_data[0] ); ?>')"></div>
+							<div class="fx-mm-item-caption"><?php echo $slug; ?></div>
 						</div><!-- .fx-mm-item-wrap -->
 					</div><!-- .fx-mm-item -->
 					<?php

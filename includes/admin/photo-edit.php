@@ -288,12 +288,19 @@ function fx_photo_tag_admin_scripts( $hook ){
 		/* New Entry Notice */
 		if( "post-new.php" == $hook ){
 
+			/* f(x) Box */
 			wp_enqueue_script( 'fx-box' );
-			wp_enqueue_style( 'fx-photo-tag-edit-notice', FX_PHOTO_TAG_URI . 'assets/admin/edit-notice.css', array( 'fx-box' ), FX_PHOTO_TAG_VERSION );
+			wp_enqueue_style( 'fx-box' );
+
+			wp_enqueue_style( 'fx-photo-tag-post-edit', FX_PHOTO_TAG_URI . 'assets/admin/post-edit.css', array( 'fx-box' ), FX_PHOTO_TAG_VERSION );
 		}
 
 		/* Post need to be published first before upload image. */
 		elseif( "post.php" == $hook ){
+
+			/* f(x) Box */
+			wp_enqueue_script( 'fx-box' );
+			wp_enqueue_style( 'fx-box' );
 
 			/* CSS */
 			wp_enqueue_style( 'fx-photo-tag-post-edit', FX_PHOTO_TAG_URI . 'assets/admin/post-edit.css', array( 'fx-box' ), FX_PHOTO_TAG_VERSION );

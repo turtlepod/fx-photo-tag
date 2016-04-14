@@ -1,3 +1,8 @@
+/* f(x) Box: disable scrolling */
+.fx-box-stop-scoll{
+	height: auto;
+	overflow: inherit;
+}
 /* Fake Meta Box */
 .fx-postarea{
 	margin-top: 20px;

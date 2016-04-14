@@ -21,6 +21,7 @@ After installation of this plugin, you can tag your photo in "Media > Photo Tag"
 1. Super simple and easy to use.
 1. Add label/tag image/photo like facebook.
 1. Easy to embed photo in post/page using shortcode.
+1. Easily add shortcode in post/page using "Add Media" button.
 1. Two color scheme for the tag/label. Black(default) and White.
 1. Lightweight no bloated features.
 1. Responsive and mobile ready.
@@ -62,14 +63,17 @@ Simply use the shortcode provided in any post content.
 3. Click the tag to edit or delete.
 4. Default (black) color scheme.
 5. White color scheme (for dark photo).
-6. Add your photo using shortcode in your post.
-7. Final result.
+6. Click "Add Media" button to add shortcode.
+7. Click "Photo Tag" to select and insert your tagged photo shortcode.
+8. Shortcode inserted in post editor.
+9. Final result.
 
 == Changelog ==
 
 = 1.1.0 - 14 April 2016 =
 * Add Media Modal Tab to insert photo tag shortcode easier.
-* Update f(x) Box
+* Update f(x) Box Pup Up.
+* Fix edit tag bug when no changes.
 
 = 1.0.0 - 08 April 2016 =
 * Init
