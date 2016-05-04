@@ -9,6 +9,10 @@
  * License: GPLv2 or later
  * Text Domain: fx-photo-tag
  * Domain Path: /languages/
+ *
+ * @author David Chandra Purnama <david@genbu.me>
+ * @copyright Copyright (c) 2016, Genbu Media
+ * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 **/
 
 /* Do not access this file directly */
