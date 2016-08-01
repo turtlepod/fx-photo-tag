@@ -120,7 +120,7 @@ function fx_photo_tag_ajax_edit(){
 	/* Ajax */
 	$output = array(
 		'tag'     => '', // html of the tag to insert
-		'message' => __( 'Error. Please try again.', 'fx-photo-tag' ),
+		'message' => __( 'Photo tag updated.', 'fx-photo-tag' ),
 	);
 
 	/* Var */
@@ -153,10 +153,8 @@ function fx_photo_tag_ajax_edit(){
 	unset( $clean_tag_datas['left'] );
 	$tag_added = update_post_meta( $post_id, 'tag-' . $tag_id, serialize( $clean_tag_datas ) );
 
-	if( false !== $tag_added ){
-		$output['tag'] = fx_photo_tag_single_tag_html( $tag_datas );
-		$output['message'] = __( 'Photo tag updated.', 'fx-photo-tag' );
-	}
+	/* Always output tag */
+	$output['tag'] = fx_photo_tag_single_tag_html( $tag_datas );
 
 	/* Print */
 	echo json_encode( $output );

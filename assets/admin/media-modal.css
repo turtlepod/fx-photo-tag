@@ -1,0 +1,110 @@
+/* Container */
+.fx-mm-browser{
+	height: 100%;
+	position: relative;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+	.fx-mm-browser *,.fx-mm-browser *:before,.fx-mm-browser *:after {
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+
+/* Content */
+.fx-mm-content{
+	position: absolute;
+	right: 0;
+	top: 0;
+	left: 0;
+	bottom: 60px;
+	overflow: hidden;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+	.fx-mm-content .spinner.is-active{
+		float: left;
+		margin-left: 20px;
+		margin-top: 26px;
+		display: block;
+	}
+
+/* Toolbar */
+.fx-mm-toolbar{
+	position: absolute;
+	height: 60px;
+	width: 100%;
+	bottom: 0;
+	right: 0;
+	z-index: 100;
+	border-top: 1px solid #ccc;
+}
+.fx-mm-toolbar .button.fx-mm-insert{
+	float: right;
+	margin-top: 16px;
+	margin-right: 16px;
+}
+
+/* Items */
+.fx-mm-items{
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	position: relative;
+	width: 100%;
+	padding: 16px 0 0 16px;
+	display: none; /* body */
+}
+	.fx-mm-content .fx-mm-items{
+		display: block; /* modal */
+	}
+
+/* Item */
+.fx-mm-item{
+	float: left;
+	padding: 0 14px 14px 0;
+	max-width: 50%;
+	position: relative;
+}
+	.fx-mm-item.selected{
+	}
+.fx-mm-item-wrap{
+	padding: 6px;
+	position: relative;
+}
+	.fx-mm-item:hover .fx-mm-item-wrap{
+		border: none;
+		box-shadow: 0 0 2px 3px #fff inset,
+					0 0 0 7px #5b9dd9 inset;
+	}
+	.fx-mm-item.selected .fx-mm-item-wrap,
+	.fx-mm-item.selected:hover .fx-mm-item-wrap{
+		padding: 1px;
+		border: 5px solid #0073AA;
+		box-shadow: none;
+	}
+.fx-mm-item-image{
+	width: 175px;
+	height: 175px;
+	background-position: center center;
+	background-size: cover;
+}
+.fx-mm-item-caption{
+	padding: 5px;
+	font-size: 17px;
+	line-height: 1.2em;
+	text-align: center;
+	background: rgba( 0,0,0,0.5 );
+	color: #fff;
+	position: absolute;
+	left: 6px;
+	bottom: 6px;
+	right: 6px;
+}
+	.fx-mm-item.selected .fx-mm-item-caption{
+		left: 1px;
+		bottom: 1px;
+		right: 1px;
+	}

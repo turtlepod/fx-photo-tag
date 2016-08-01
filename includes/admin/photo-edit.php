@@ -86,19 +86,30 @@ function fx_photo_tag_form_inputs( $post_id ){
  * @since 1.0.0
 **/
 function fx_photo_tag_form_upload_button( $post_id ){
+	global $hook_suffix;
 	?>
 
-	<?php if( get_post_meta( $post_id, 'image_id', true ) ){ ?>
+	<?php if( "post.php" == $hook_suffix ){ ?>
 
-		<a id="fx-upload-button" style="display:none" href="#" class="button"><?php _e( 'Upload/Select Image', 'fx-photo-tag' ); ?></a>
-		<a id="fx-remove-button" href="#" class="button"><?php _e( 'Remove Image', 'fx-photo-tag' ); ?></a>
+		<?php if( get_post_meta( $post_id, 'image_id', true ) ){ ?>
 
-	<?php } else { ?>
+			<a id="fx-upload-button" style="display:none" href="#" class="button"><?php _e( 'Upload/Select Image', 'fx-photo-tag' ); ?></a>
+			<a id="fx-remove-button" href="#" class="button"><?php _e( 'Remove Image', 'fx-photo-tag' ); ?></a>
 
-		<a id="fx-upload-button" href="#" class="button"><?php _e( 'Upload/Select Image', 'fx-photo-tag' ); ?></a>
-		<a id="fx-remove-button" style="display:none;" href="#" class="button"><?php _e( 'Remove Image', 'fx-photo-tag' ); ?></a>
+		<?php } else { ?>
 
-	<?php } //end ?>
+			<a id="fx-upload-button" href="#" class="button"><?php _e( 'Upload/Select Image', 'fx-photo-tag' ); ?></a>
+			<a id="fx-remove-button" style="display:none;" href="#" class="button"><?php _e( 'Remove Image', 'fx-photo-tag' ); ?></a>
+
+		<?php } //end ?>
+
+	<?php } elseif( "post-new.php" == $hook_suffix ){ ?>
+
+		<a id="fx-upload-button" href="#" class="button fx-box" data-target="#fx-photo-tag-notice-popup" data-title="<?php esc_attr( _e( 'Notice', 'fx-photo-tag' ) );?>" data-width="300px" ><?php _e( 'Upload/Select Image', 'fx-photo-tag' ); ?></a>
+
+	<?php } ?>
+
+
 
 	<?php
 }
@@ -142,61 +153,53 @@ function fx_photo_tag_popup_html(){
 	$class = FX_PHOTO_TAG_DEBUG ? "fx-photo-tag-popup-debug" : "fx-photo-tag-popup-data";
 	?>
 
-	<div id="fx-photo-tag-edit-popup" class="fx-box" style="display:none;width:350px;height:320px;">
-		<div class="fx-box-container">
-			<div class="fx-box-title">
-				<?php _e( 'Tag', 'fx-photo-tag' );?> <span class="fx-box-close"></span>
-			</div>
-			<div class="fx-box-content">
+	<div id="fx-photo-tag-edit-popup" style="display:none">
 
-				<div class="<?php echo esc_attr( $class ); ?>">
+		<div class="<?php echo esc_attr( $class ); ?>">
 
-					<label>X:</br>
-						<input class="x-pos" autocomplete="off" type="<?php echo esc_attr( $type ); ?>" value="">
-					</label>
-					<label>Y:</br>
-						<input class="y-pos" autocomplete="off" type="<?php echo esc_attr( $type ); ?>" value="">
-					</label>
-					<label>LEFT:</br>
-						<input class="left-pos" autocomplete="off" type="<?php echo esc_attr( $type ); ?>" value="">
-					</label>
-					<label>TOP:</br>
-						<input class="top-pos" autocomplete="off" type="<?php echo esc_attr( $type ); ?>" value="">
-					</label>
+			<label>X:</br>
+				<input class="x-pos" autocomplete="off" type="<?php echo esc_attr( $type ); ?>" value="">
+			</label>
+			<label>Y:</br>
+				<input class="y-pos" autocomplete="off" type="<?php echo esc_attr( $type ); ?>" value="">
+			</label>
+			<label>LEFT:</br>
+				<input class="left-pos" autocomplete="off" type="<?php echo esc_attr( $type ); ?>" value="">
+			</label>
+			<label>TOP:</br>
+				<input class="top-pos" autocomplete="off" type="<?php echo esc_attr( $type ); ?>" value="">
+			</label>
 
-				</div>
+		</div>
 
-				<div class="fx-photo-tag-popup-input">
-					<p>
-						<label><strong><?php _e( 'Text:', 'fx-photo-tag' ); ?></strong><br/>
-							<input class="tag-text" autocomplete="off" type="text" value="Text">
-						</label>
-					</p>
-					<p>
-						<label><strong><?php _e( 'URL:', 'fx-photo-tag' ); ?></strong><br/>
-							<input class="tag-url" autocomplete="off" type="text" placeholder="http://" value="">
-						</label>
-						<label>
-							<input class="tag-target" autocomplete="off" type="checkbox" value="1"> <?php _e( 'Open in new tab?', 'fx-photo-tag' ); ?>
-						</label>
-					</p>
-				</div><!-- .fx-photo-tag-popup-input -->
+		<div class="fx-photo-tag-popup-input">
+			<p>
+				<label><strong><?php _e( 'Text:', 'fx-photo-tag' ); ?></strong><br/>
+					<input class="tag-text" autocomplete="off" type="text" value="Text">
+				</label>
+			</p>
+			<p>
+				<label><strong><?php _e( 'URL:', 'fx-photo-tag' ); ?></strong><br/>
+					<input class="tag-url" autocomplete="off" type="text" placeholder="http://" value="">
+				</label>
+				<label>
+					<input class="tag-target" autocomplete="off" type="checkbox" value="1"> <?php _e( 'Open in new tab?', 'fx-photo-tag' ); ?>
+				</label>
+			</p>
+		</div><!-- .fx-photo-tag-popup-input -->
 
-				<p class="fx-photo-tag-popup-action">
-					<a id="fx-add-tag" class="save-tag button button-primary" href="#"><?php _e( 'Add Tag', 'fx-photo-tag' ); ?></a>
-					<a id="fx-edit-tag" style="display:none;" class="save-tag button button-primary" href="#"><?php _e( 'Edit Tag', 'fx-photo-tag' ); ?></a>
-					<a id="fx-delete-tag" style="display:none;" class="delete-tag button" href="#"><?php _e( 'Delete Tag', 'fx-photo-tag' ); ?></a>
-					<span id="fx-save-tag-spinner" class="spinner"></span>
-				</p><!-- .fx-photo-tag-popup-action -->
+		<p class="fx-photo-tag-popup-action">
+			<a id="fx-add-tag" class="save-tag button button-primary" href="#"><?php _e( 'Add Tag', 'fx-photo-tag' ); ?></a>
+			<a id="fx-edit-tag" style="display:none;" class="save-tag button button-primary" href="#"><?php _e( 'Edit Tag', 'fx-photo-tag' ); ?></a>
+			<a id="fx-delete-tag" style="display:none;" class="delete-tag button" href="#"><?php _e( 'Delete Tag', 'fx-photo-tag' ); ?></a>
+			<span id="fx-save-tag-spinner" class="spinner"></span>
+		</p><!-- .fx-photo-tag-popup-action -->
 
-				<div class="fx-photo-tag-ajax-message" style="display:none;">
-					<?php /* PLACEHOLDER FOR AJAX MESSAGE */ ?>
-				</div>
+		<div class="fx-photo-tag-ajax-message" style="display:none;">
+			<?php /* PLACEHOLDER FOR AJAX MESSAGE */ ?>
+		</div>
 
-			</div><!-- .fx-box-content -->
-		</div><!-- .fx-box-container -->
 	</div><!-- #fx-photo-tag-edit-popup -->
-	<div class="fx-box-overlay" style="display:none"></div><!-- .fx-box-overlay -->
 	<?php
 }
 
@@ -207,22 +210,9 @@ function fx_photo_tag_popup_html(){
 **/
 function fx_photo_tag_popup_notice_html(){
 	?>
-
-	<div id="fx-photo-tag-upload-notice" class="fx-box" style="display:none;width:300px;height:200px;">
-		<div class="fx-box-container">
-			<div class="fx-box-title">
-				<?php _e( 'Notice', 'fx-photo-tag' );?> <span class="fx-box-close"></span>
-			</div>
-			<div class="fx-box-content">
-
-				<div id="fx-photo-tag-notice-popup">
-					<p><?php _e( 'Please save entry as draft or publish entry before upload/select image.' ); ?></p>
-				</div>
-
-			</div><!-- .fx-box-content -->
-		</div><!-- .fx-box-container -->
-	</div><!-- .fx-box -->
-	<div class="fx-box-overlay" style="display:none"></div><!-- .fx-box-overlay -->
+	<div id="fx-photo-tag-notice-popup" style="display:none">
+		<p><?php _e( 'Please save entry as draft or publish entry before upload/select image.' ); ?></p>
+	</div><!-- #fx-photo-tag-notice-popup -->
 	<?php
 }
 
@@ -289,8 +279,8 @@ function fx_photo_tag_admin_scripts( $hook ){
 	global $post_type;
 
 	/* Thickbox Replacement */
-	wp_register_script( 'fx-box', FX_PHOTO_TAG_URI. 'assets/admin/fx-box.js', array( 'jquery' ), FX_PHOTO_TAG_VERSION, true );
-	wp_register_style( 'fx-box', FX_PHOTO_TAG_URI . 'assets/admin/fx-box.css', array(), FX_PHOTO_TAG_VERSION );
+	wp_register_script( 'fx-box', FX_PHOTO_TAG_URI. 'assets/fx-box/jquery.fx-box.js', array( 'jquery' ), FX_PHOTO_TAG_VERSION, true );
+	wp_register_style( 'fx-box', FX_PHOTO_TAG_URI . 'assets/fx-box/fx-box.css', array(), FX_PHOTO_TAG_VERSION );
 
 	/* Check post type before loading scripts. */
 	if( 'fx_photo_tag' == $post_type ){
@@ -298,32 +288,42 @@ function fx_photo_tag_admin_scripts( $hook ){
 		/* New Entry Notice */
 		if( "post-new.php" == $hook ){
 
-			wp_enqueue_script( 'fx-photo-tag-edit-notice', FX_PHOTO_TAG_URI. 'assets/admin/edit-notice.js', array( 'jquery', 'fx-box' ), FX_PHOTO_TAG_VERSION, true );
-			wp_enqueue_style( 'fx-photo-tag-edit-notice', FX_PHOTO_TAG_URI . 'assets/admin/edit-notice.css', array( 'fx-box' ), FX_PHOTO_TAG_VERSION );
+			/* f(x) Box */
+			wp_enqueue_script( 'fx-box' );
+			wp_enqueue_style( 'fx-box' );
+
+			wp_enqueue_style( 'fx-photo-tag-post-edit', FX_PHOTO_TAG_URI . 'assets/admin/post-edit.css', array( 'fx-box' ), FX_PHOTO_TAG_VERSION );
 		}
 
 		/* Post need to be published first before upload image. */
 		elseif( "post.php" == $hook ){
 
+			/* f(x) Box */
+			wp_enqueue_script( 'fx-box' );
+			wp_enqueue_style( 'fx-box' );
+
 			/* CSS */
 			wp_enqueue_style( 'fx-photo-tag-post-edit', FX_PHOTO_TAG_URI . 'assets/admin/post-edit.css', array( 'fx-box' ), FX_PHOTO_TAG_VERSION );
 
 			/* JS */
-			wp_enqueue_media(); // need this to upload image.
-			wp_enqueue_script( 'fx-photo-tag-post-edit', FX_PHOTO_TAG_URI. 'assets/admin/post-edit.js', array( 'jquery', 'jquery-ui-core', 'media-upload', 'fx-box' ), FX_PHOTO_TAG_VERSION, true );
-			wp_localize_script( 'fx-photo-tag-post-edit', 'fx_photo_tag',
-				array(
-					/* Upload */
-					'title'          => __( 'Upload/Select Image', 'fx-photo-tag' ),
-					'button_text'    => __( 'Insert Image', 'fx-photo-tag' ),
-					/* Pop Up */
-					'tag_default'    => __( 'Label', 'fx-photo-tag' ),
-					/* Ajax Related */
-					'ajax_url'       => admin_url( 'admin-ajax.php' ),
-					'ajax_nonce'     => wp_create_nonce( 'fx_photo_tag_ajax_nonce' ),
-					'post_id'        => intval( $_GET["post"] ),
-				)
-			);
+			if( "post.php" == $hook ){
+				wp_enqueue_media(); // need this to upload image.
+				wp_enqueue_script( 'fx-photo-tag-post-edit', FX_PHOTO_TAG_URI. 'assets/admin/post-edit.js', array( 'jquery', 'jquery-ui-core', 'media-upload', 'fx-box' ), FX_PHOTO_TAG_VERSION, true );
+				wp_localize_script( 'fx-photo-tag-post-edit', 'fx_photo_tag',
+					array(
+						/* Upload */
+						'title'          => __( 'Upload/Select Image', 'fx-photo-tag' ),
+						'button_text'    => __( 'Insert Image', 'fx-photo-tag' ),
+						/* Pop Up */
+						'popup_title'    => __( 'Photo Tag', 'fx-photo-tag' ),
+						'tag_default'    => __( 'Label', 'fx-photo-tag' ),
+						/* Ajax Related */
+						'ajax_url'       => admin_url( 'admin-ajax.php' ),
+						'ajax_nonce'     => wp_create_nonce( 'fx_photo_tag_ajax_nonce' ),
+						'post_id'        => intval( $_GET["post"] ),
+					)
+				);
+			}
 		}
 	}
 }

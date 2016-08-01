@@ -135,7 +135,12 @@ jQuery(document).ready(function($){
 		$( '#fx-delete-tag' ).hide();
 
 		/* Open pop-up */
-		fx_box_open( '#fx-photo-tag-edit-popup' );
+		$.fxBox.openBox({
+			title  : fx_photo_tag.popup_title,
+			target : '#fx-photo-tag-edit-popup',
+			width  : '350px',
+			height : '300px',
+		});
 
 		/* Reposition Tags */
 		fx_photo_tag_reposition();
@@ -219,7 +224,12 @@ jQuery(document).ready(function($){
 		$( '#fx-delete-tag' ).show();
 
 		/* Open pop-up */
-		fx_box_open( '#fx-photo-tag-edit-popup' );
+		$.fxBox.openBox({
+			title  : fx_photo_tag.popup_title,
+			target : '#fx-photo-tag-edit-popup',
+			width  : '350px',
+			height : '300px',
+		});
 
 		/* Reposition Tags */
 		fx_photo_tag_reposition();
